@@ -19,4 +19,5 @@ yarn-error.log
 /.vscode
 /packages
 /dist
+composer-*.json
 nativephp-boilerplate.code-workspace

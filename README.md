@@ -1,3 +1,42 @@
+# Boilerplate usage
+
+This Boilerplate is primarly to build NativePHP Apps for Windows.
+
+## Prerequisites
+
+- Docker Desktop (optional)
+- WSL Distribution (Tested with Ubuntu 22.04)
+- Docker on WSL (if not using Docker Desktop)
+
+## Installation
+
+Create a template from this or git clone it.
+
+`git clone https://github.com/Rudeisnice/nativephp-boilerplate.git`
+
+install Laravel dependencies and build the docker image.
+
+`composer install && sail build --no-cache && sail up -d && sail npm install`
+
+don't forget to add an `APP_KEY` with:
+
+`sail artisan key:generate`
+
+## Usage
+
+Modified sail container with Wine for building for Windows.<br>
+Use `sail` instead of `php` for building.
+
+### Serving for Development
+
+Use `php artisan native:serve` for serving the dev application.
+
+### Building
+
+Building on Windows with mounted WSL takes >20 mins. Its recommended to build directly on the WSL Distro. Without mounting, build time is cut down to roughly 2 mins (i7 9700KF for reference). Depending on your application.
+
+`sail artisan native:build win`
+
 <p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
 
 <p align="center">
