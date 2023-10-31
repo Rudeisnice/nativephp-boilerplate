@@ -10,18 +10,13 @@ WORKDIR /var/www/html
 
 ENV DEBIAN_FRONTEND noninteractive
 ENV TZ=Europe/Zurich
-# Added to nativephp/electron/resources/js to path since it doesnt recognize its .bin directory when using "npm install" in it
-ENV PATH="${PATH}:/var/www/html/vendor/nativephp/electron/resources/js/node_modules/.bin"
 
 RUN ln -snf /usr/share/zoneinfo/$TZ /etc/localtime && echo $TZ > /etc/timezone
 
-RUN apt-get update -y && apt-get upgrade -y
-
-RUN apt-get install -y wget curl zip unzip
-
-RUN apt-get remove libgd3
-
-RUN dpkg --add-architecture i386 && \
+RUN apt-get update -y \
+    && apt-get install -y wget curl zip unzip \
+    && apt-get remove libgd3 \
+    && dpkg --add-architecture i386 && \
     wget -NP /etc/apt/sources.list.d/ https://dl.winehq.org/wine-builds/ubuntu/dists/jammy/winehq-jammy.sources && \
     apt upgrade -y && \
     mkdir -pm755 /etc/apt/keyrings && \
@@ -38,12 +33,14 @@ RUN dpkg --add-architecture i386 && \
     apt-get clean && rm -rf /var/lib/apt/lists/*
 
 
-RUN curl -L https://github.com/electron-userland/electron-builder-binaries/releases/download/wine-2.0.3-mac-10.13/wine-home.zip > /tmp/wine-home.zip && unzip /tmp/wine-home.zip -d /root/.wine && unlink /tmp/wine-home.zip
+RUN curl -L https://github.com/electron-userland/electron-builder-binaries/releases/download/wine-2.0.3-mac-10.13/wine-home.zip > /tmp/wine-home.zip \
+    && unzip /tmp/wine-home.zip -d /root/.wine \
+    && unlink /tmp/wine-home.zip
 
 ENV WINEDEBUG -all,err+all
 ENV WINEDLLOVERRIDES winemenubuilder.exe=d
 
-RUN apt-get update \
+RUN apt-get update -y --fix-missing \
     && mkdir -p /etc/apt/keyrings \
     && apt-get install -y gnupg gosu curl ca-certificates zip unzip git supervisor sqlite3 libcap2-bin libpng-dev python2 dnsutils librsvg2-bin fswatch \
     && curl -sS 'https://keyserver.ubuntu.com/pks/lookup?op=get&search=0x14aa40ec0831756756d7f66c4f4ea0aae5267a6c' | gpg --dearmor | tee /etc/apt/keyrings/ppa_ondrej_php.gpg > /dev/null \
