@@ -6,17 +6,17 @@
     "license": "MIT",
     "require": {
         "php": "^8.2",
-        "laravel/framework": "^11.22.0",
-        "laravel/tinker": "^2.9",
-        "nativephp/electron": "^0.7.1"
+        "laravel/framework": "^11.25.0",
+        "laravel/tinker": "^2.10",
+        "nativephp/electron": "^0.7.3"
     },
     "require-dev": {
         "fakerphp/faker": "^1.23.1",
-        "laravel/pint": "^1.17.3",
-        "laravel/sail": "^1.31.2",
+        "laravel/pint": "^1.18.1",
+        "laravel/sail": "^1.33.0",
         "mockery/mockery": "^1.6.12",
         "nunomaduro/collision": "^8.4.0",
-        "phpunit/phpunit": "^11.3.2",
+        "phpunit/phpunit": "^11.3.6",
         "spatie/laravel-ignition": "^2.8.0"
     },
     "autoload": {
