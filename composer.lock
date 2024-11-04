@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "bf0602101501133e6d37ec004cb697cc",
+    "content-hash": "2f79ca5612f925f1d076097efe9edf9f",
     "packages": [
         {
             "name": "brick/math",
@@ -1928,16 +1928,16 @@
         },
         {
             "name": "nativephp/electron",
-            "version": "0.7.4",
+            "version": "0.8.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/NativePHP/electron.git",
-                "reference": "8002c116dc7ed1a942af2fd7caab5594743355e3"
+                "reference": "56db7fc9910d286a5f6cbd0214f8d74215be667b"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/NativePHP/electron/zipball/8002c116dc7ed1a942af2fd7caab5594743355e3",
-                "reference": "8002c116dc7ed1a942af2fd7caab5594743355e3",
+                "url": "https://api.github.com/repos/NativePHP/electron/zipball/56db7fc9910d286a5f6cbd0214f8d74215be667b",
+                "reference": "56db7fc9910d286a5f6cbd0214f8d74215be667b",
                 "shasum": ""
             },
             "require": {
@@ -2001,7 +2001,7 @@
                 "nativephp"
             ],
             "support": {
-                "source": "https://github.com/NativePHP/electron/tree/0.7.4"
+                "source": "https://github.com/NativePHP/electron/tree/0.8.0"
             },
             "funding": [
                 {
@@ -2013,7 +2013,7 @@
                     "type": "opencollective"
                 }
             ],
-            "time": "2024-10-14T17:37:14+00:00"
+            "time": "2024-11-01T09:53:01+00:00"
         },
         {
             "name": "nativephp/laravel",
